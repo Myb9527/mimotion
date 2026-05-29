@@ -2,7 +2,8 @@ name: 刷步数
 
 on:
   schedule:
-    - cron: '0 1,4,7,10,12,14,23 * * *'
+    - cron: '41 8-22 * * *'
+      timezone: 'Asia/Shanghai'
   workflow_dispatch:
 
 jobs:
@@ -38,7 +39,6 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@users.noreply.github.com
           git add .
-          # 有变更才提交，否则跳过
           if [[ -n $(git status --porcelain) ]]; then
             git commit -m "persist tokens trigger by ${{ github.event_name }}"
             git push origin master
