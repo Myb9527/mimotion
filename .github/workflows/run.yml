@@ -2,7 +2,7 @@ name: 刷步数
 
 on:
   schedule:
-    - cron: '29 8-22 * * *'
+    - cron: '19 8-22 * * *'
       timezone: 'Asia/Shanghai'
   workflow_dispatch:
 
